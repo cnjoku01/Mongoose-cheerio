@@ -3,7 +3,7 @@
 // requires dependcies 
 var express = require("express");
 var mongoose = require("mongoose");
-var exprsbar = require("express-handlebars");
+var expressHandlebars = require("express-handlebars");
 var bodyParser = require("body-parser");
 
 var PORT = process.env.PORT || 3001;
@@ -16,7 +16,7 @@ require("../config/routes")(router);
 
 app.use(express.static(__dirname + "/public"));
 
-app.engine("handlebars", exprsbar({
+app.engine("handlebars", expressHandlebars({
     defaultLayout: "main"
 }));
 app.set("view engine", "handlebars");
